@@ -1,0 +1,51 @@
+# Rewrite Engine rules
+Options -MultiViews
+RewriteEngine On
+
+# Force HTTPS and non-www
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+
+# Custom 404 page
+ErrorDocument 404 /404.php
+
+# Allow real files and directories such as CSS, JS, images, fonts, etc.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Prevent direct access to internal PHP files
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+RewriteRule ^index\.php$ - [R=404,L]
+
+RewriteCond %{THE_REQUEST} \s/+contact\.php[\s?] [NC]
+RewriteRule ^contact\.php$ - [R=404,L]
+
+RewriteCond %{THE_REQUEST} \s/+faq\.php[\s?] [NC]
+RewriteRule ^faq\.php$ - [R=404,L]
+
+RewriteCond %{THE_REQUEST} \s/+download\.php[\s?] [NC]
+RewriteRule ^download\.php$ - [R=404,L]
+
+RewriteCond %{THE_REQUEST} \s/+legal\.php[\s?] [NC]
+RewriteRule ^legal\.php$ - [R=404,L]
+
+RewriteCond %{THE_REQUEST} \s/+privacy\.php[\s?] [NC]
+RewriteRule ^privacy\.php$ - [R=404,L]
+
+RewriteCond %{THE_REQUEST} \s/+terms\.php[\s?] [NC]
+RewriteRule ^terms\.php$ - [R=404,L]
+
+# Clean URLs shown to visitors
+RewriteRule ^$ index.php [L]
+RewriteRule ^contact/?$ contact.php [L]
+RewriteRule ^faq/?$ faq.php [L]
+RewriteRule ^download/?$ download.php [L]
+RewriteRule ^legal-notices/?$ legal.php [L]
+RewriteRule ^privacy-policy/?$ privacy.php [L]
+RewriteRule ^terms-of-use/?$ terms.php [L]
+
+# Everything else goes to 404
+RewriteRule ^ - [R=404,L]

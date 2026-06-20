@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 */
 $conf = [
     'sitename'  => 'MediaSane',
-    'gtag'      => 'G-Q8QGEZ4493'
+    'gtag'      => ''
 ];
 
 ?>

@@ -16,7 +16,6 @@
     --bs-breadcrumb-margin-bottom:1rem;
     --bs-breadcrumb-font-size:0.8125rem;
     --bs-breadcrumb-bg:transparent;
-    --bs-breadcrumb-border-radius:;
     --bs-breadcrumb-divider-color:var(--bs-gray-500);
     --bs-breadcrumb-item-padding-x:0.5rem;
     --bs-breadcrumb-item-active-color:var(--bs-primary);
@@ -87,55 +86,6 @@
     -webkit-box-align:center;
     -ms-flex-align:center;
     align-items:center;
-}
-
-/**
- * Custom Backgrounds
-*/
-html[data-bs-theme="light"] .d-light 
-{
-    display:block
-}
-
-html[data-bs-theme="light"] .d-dark 
-{
-    display:none
-}
-
-html[data-bs-theme="dark"] .d-light 
-{
-    display:none
-}
-
-html[data-bs-theme="dark"] .d-dark 
-{
-    display:block
-}
-
-html[data-bs-theme="light"] .bg-greyground 
-{
-    background-color:#f3f6ff
-}
-
-html[data-bs-theme="dark"] .bg-greyground 
-{
-    background-color:#2f3134
-}
-
-html[data-bs-theme="light"] .bg-light input,
-html[data-bs-theme="light"] .bg-light select,
-html[data-bs-theme="light"] .bg-light textarea 
-{
-    background-color:#fefefe;
-    border-color:#d4d7e5
-}
-
-html[data-bs-theme="dark"] .bg-light input,
-html[data-bs-theme="dark"] .bg-light select,
-html[data-bs-theme="dark"] .bg-light textarea 
-{
-    background-color:#2a2d30;
-    border-color:#505355
 }
 
 /**
@@ -250,26 +200,6 @@ html[data-bs-theme="dark"] .bg-light textarea
     width:5.625rem;
     height:.1875rem;
     content:""
-}
-
-html[data-bs-theme="light"] .title-boxed-item 
-{
-    border-bottom:.1875rem solid #e2e5f1!important
-}
-
-html[data-bs-theme="dark"] .title-boxed-item 
-{
-    border-bottom:.1875rem solid #45474a!important
-}
-
-section[data-bs-theme="light"] .title-boxed-item 
-{
-    border-bottom:.1875rem solid #e2e5f1!important;
-}
-
-section[data-bs-theme="dark"] .title-boxed-item 
-{
-    border-bottom:.1875rem solid #45474a!important;
 }
 
 .title-line-centered 
@@ -608,28 +538,6 @@ section[data-bs-theme="dark"] .title-boxed-item
     font-weight:600;
 }
 
-html[data-bs-theme="light"] .article-wrapper table th,
-html[data-bs-theme="light"] .article-wrapper table td
-{
-    border:1px solid #dce0e5;
-}
-
-html[data-bs-theme="light"] .article-wrapper table th
-{
-    background-color:#f8f8f8;
-}
-
-html[data-bs-theme="dark"] .article-wrapper table th,
-html[data-bs-theme="dark"] .article-wrapper table td
-{
-    border:1px solid #38393b;
-}
-
-html[data-bs-theme="dark"] .article-wrapper table th
-{
-    background-color:#292a2d;
-}
-
 @media(max-width:640px) 
 {
     .article-wrapper table th,
@@ -639,7 +547,31 @@ html[data-bs-theme="dark"] .article-wrapper table th
     }
 }
 
-/* Prism container */
+/**
+ * Tabs
+*/
+body.theme--dark .method-tabs .nav-tabs .nav-link 
+{
+    border-bottom: none !important;
+    border-bottom-color: transparent !important;
+}
+
+body.theme--dark .method-tabs .nav-tabs .nav-link.active 
+{
+    background-color: #212632 !important;
+    border-color: #6c757d !important;
+    border-bottom: none !important;
+}
+
+body.theme--dark .method-tabs .nav-tabs .nav-link:hover 
+{
+    border-color: #6c757d !important;
+    border-bottom: none !important;
+}
+
+/**
+ * Prism 
+*/
 pre[class*="language-"] 
 {
     background:#f9f9fa!important;
@@ -650,18 +582,28 @@ pre[class*="language-"]
     overflow-x:auto;
     font-size:.875rem;
     line-height:1.6;
-    box-shadow:0 .25rem .5rem rgba(0,0,0,.15);
     border:1px solid #eaeaea!important;
 }
 
-/* Selection */
+body.theme--dark pre[class*="language-"] 
+{
+    background:#1c1f29!important;
+    color:#7e868e!important;
+    border:1px solid #6c757d!important;
+}
+
+/**
+ * Selection
+*/
 pre[class*="language-"] ::selection,
 pre[class*="language-"]::selection 
 {
     background:rgba(56,139,253,.3);
 }
 
-/* Scrollbar */
+/**
+ * Scrollbar
+*/
 pre[class*="language-"]::-webkit-scrollbar 
 {
     height:6px;
@@ -673,7 +615,9 @@ pre[class*="language-"]::-webkit-scrollbar-thumb
     border-radius:10px;
 }
 
-/* Tokens */
+/**
+ * Token
+*/
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -750,7 +694,9 @@ pre[class*="language-"]::-webkit-scrollbar-thumb
     font-style:italic;
 }
 
-/* Inline code */
+/**
+ * Code
+*/
 code[class*="language-"] 
 {
     color:#7e868e!important;

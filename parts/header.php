@@ -1,14 +1,17 @@
 <?php
-require('includes/conf.php');
-require('includes/core.php');
-require('includes/recaptcha.php');
+/**
+ * Load environment
+*/
+require('includes/loader.php');
 
 /**
  * Define $core
 */
-$core = getDataByLastSegment();
+$core = getDataSegment();
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,17 +19,17 @@ $core = getDataByLastSegment();
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <title><?php echo $core['title']; ?> | <?php echo $conf['sitename']; ?></title>
     <meta name="robots" content="max-image-preview:large">
-    <link rel="stylesheet" href="/assets/fonts/flaticon/flaticon.min.css" media="all">
-    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css" media="all">
-    <link rel="stylesheet" href="/assets/stylesheets/vendors/bootstrap/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="/assets/stylesheets/vendors/wmenu/wmenu.min.css" media="all">
-    <link rel="stylesheet" href="/assets/stylesheets/vendors/fadedown/fadedown.min.css" media="all">
-    <link rel="stylesheet" href="/assets/stylesheets/vendors/miscs/miscs.min.css" media="all">
-    <link rel='stylesheet' href="/assets/stylesheets/vendors/prism/prism.min.css" media="all">
-    <link rel="stylesheet" href="/assets/stylesheets/vendors/cookieconsent/cookieconsent.min.css" media="all">
-    <link rel="stylesheet" href="/assets/stylesheets/app.min.css" media="all">
-    <link rel="stylesheet" href="/assets/stylesheets/responsive.min.css" media="all">
-    <link rel="stylesheet" href="/assets/stylesheets/custom.min.css" media="all">
+    <link rel="stylesheet" href="/assets/fonts/flaticon/flaticon.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/stylesheets/vendors/bootstrap/bootstrap.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/stylesheets/vendors/wmenu/wmenu.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/stylesheets/vendors/fadedown/fadedown.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/stylesheets/vendors/miscs/miscs.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel='stylesheet' href="/assets/stylesheets/vendors/prism/prism.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/stylesheets/vendors/cookieconsent/cookieconsent.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/stylesheets/app.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/stylesheets/responsive.min.css?v=<?php echo $version; ?>" media="all">
+    <link rel="stylesheet" href="/assets/stylesheets/custom.min.css?v=<?php echo $version; ?>" media="all">
     <link rel="canonical" href="<?php echo $core['canonical']; ?>">
     <meta name="description" content="<?php echo $core['description']; ?>">
     <meta name="author" content="<?php echo $conf['sitename']; ?>">
@@ -54,7 +57,7 @@ $core = getDataByLastSegment();
     <meta name="twitter:description" value="<?php echo $core['description']; ?>">
     <meta name="twitter:image" value="<?php echo $core['thumbnail']; ?>">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3W99S7JC2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $conf['gtag']; ?>"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}

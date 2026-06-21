@@ -3,8 +3,8 @@
  * Define $recaptcha
 */
 $recaptcha = [
-    'public'    => '',
-    'private'   => ''
+    'public'    =>  '',
+    'private'   =>  ''
 ];
 
 ?>

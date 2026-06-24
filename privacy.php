@@ -3,25 +3,7 @@
     <?php require('parts/preloader.php'); ?>
     <div id="page" class="page">
         <?php require('parts/navbar.php'); ?>
-        <section class="inner-page-breadcrumb">
-            <div class="container position-relative z-index-1 pt-4 pt-md-0">
-                <div class="row g-4 g-xxl-5">
-                    <div class="col-lg-8 col-xl-6">
-                        <div class="d-none d-lg-flex position-relative mb-0">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-dots pb-0 mb-2">
-                                    <li class="breadcrumb-item">
-                                        <a class="text-muted" href="/">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Privacy Policy</li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <h1 class="title-breadcrumb">Privacy Policy</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <?php require('parts/breadcrumb.php'); ?>
         <section class="inner-page-fullwidth pb-50">
             <div class="container">
                 <div class="row justify-content-center">
